@@ -26,7 +26,7 @@
   <meta name="savepage-comments" content="" />
 </head>
 
-<body class="site_mobile_common vsc-initialized">
+<body class="site_mobile_common vsc-initialized" onload="time()" >
   <div id="wxform">
     <!---->
     <div class="input-box" id="input-box" style="text-align: center;">
@@ -315,7 +315,7 @@
                       line-height: 20px;
                       letter-spacing: 0px;
                     ">
-                  <span style="
+                  <span id="showtime" style="
                         font-size: 14px;
                         font-family: 微软雅黑;
                         font-weight: normal;
@@ -325,7 +325,7 @@
                         text-align: center;
                         line-height: 20px;
                         letter-spacing: 0px;
-                      ">2021-08-31 21:54:27</span>
+                      "></span>
                 </div>
               </div>
               <!---->
@@ -365,6 +365,19 @@
     source-type="other" page-path="/matter/m_start"></script>
   <img id="visits_collect" data-savepage-src="https://service.bupt.edu.cn/api/visits/collect?agent=mobile&uid=110036"
     src="data:text/html;base64," style="display: none" />
+
+
+    <script>
+      /* 时间 */
+      function time() {
+        t_div = document.getElementById('showtime');
+        var now = new Date()
+        t_div.innerHTML = now.getFullYear() + "/" + (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds() + "";
+        setTimeout(time, 1000);
+      }
+    </script>
+
+
 </body>
 
 
